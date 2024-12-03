@@ -36,3 +36,21 @@ Next, you'll have to do some more waiting so grab another cup of tea.
 ### Chatting with your model
 
 You can now chat with your model. When you open a new chat, you'll see a drop down in the top left of the conversation page. Select `llama3.2` from the drop down and start chatting. You'll see the model respond to your messages.
+
+
+# Using RAG with your chat
+
+If you would like to get your AI to give answers specific to a body of knowledge, you can do this using a technique called RAG (Retrtieval Augmented Generation). This allows you to embed existing documentation and context into your prompt so that it can be included in the answer that is generated.
+
+## Using RAG with Open WebUI
+
+<TODO>
+
+## Interesting source data
+
+Here are some interesting sources of data that can be used in your RAG implementation that would be suitable for experimenting with:
+* https://handbook.gitlab.com/
+* https://github.com/18F/handbook/tree/main/pages
+* https://github.com/sourcegraph/handbook
+
+These have been sourced from https://github.com/hkdobrev/awesome-handbooks which has many examples of documentation that are suitable for this kind of knowledge retrieval.
