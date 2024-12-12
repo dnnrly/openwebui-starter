@@ -55,6 +55,9 @@ Here are some interesting sources of data that can be used in your RAG implement
 
 These have been sourced from https://github.com/hkdobrev/awesome-handbooks which has many examples of documentation that are suitable for this kind of knowledge retrieval.
 
+Here's a handy PDF that could be used as a knowledge base:
+https://media.wizards.com/2018/dnd/downloads/DnD_BasicRules_2018.pdf
+
 
 ## Running Ollama Natively to make use of GPU (Written with MacOS in mind, but might work just as easily with Windows or Linux too, I've just not tested it)
 
