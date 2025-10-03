@@ -37,38 +37,8 @@ Next, you'll have to do some more waiting so grab another cup of tea.
 
 You can now chat with your model. When you open a new chat, you'll see a drop down in the top left of the conversation page. Select `llama3.2` from the drop down and start chatting. You'll see the model respond to your messages.
 
+## GPU integration
 
-# Using RAG with your chat
+By default, the docker compose file is configured to use the GPU. This assumes that the appropriate drivers have been installed.
 
-If you would like to get your AI to give answers specific to a body of knowledge, you can do this using a technique called RAG (Retrtieval Augmented Generation). This allows you to embed existing documentation and context into your prompt so that it can be included in the answer that is generated.
-
-## Using RAG with Open WebUI
-
-<TODO>
-
-## Interesting source data
-
-Here are some interesting sources of data that can be used in your RAG implementation that would be suitable for experimenting with:
-* https://handbook.gitlab.com/
-* https://github.com/18F/handbook/tree/main/pages
-* https://github.com/sourcegraph/handbook
-
-These have been sourced from https://github.com/hkdobrev/awesome-handbooks which has many examples of documentation that are suitable for this kind of knowledge retrieval.
-
-Here's a handy PDF that could be used as a knowledge base:
-https://media.wizards.com/2018/dnd/downloads/DnD_BasicRules_2018.pdf
-
-
-## Running Ollama Natively to make use of GPU (Written with MacOS in mind, but might work just as easily with Windows or Linux too, I've just not tested it)
-
-If you're running on a MacOS system, such as a newer MacBook Pro with an Apple Silicon chip (M1, M2, M3 or even the new M4), then running Ollama natively on your laptop will likely yield much better performance than through Docker. 
-
-This is a seperate way to run the whole stack, so you don't need to follow the steps above, and just follow these steps on their own.
-
-1. Install Docker Desktop from https://docs.docker.com/desktop/setup/install/mac-install/
-2. Install Ollama from https://ollama.com/download/mac
-3. Follow install instructions for Ollama in your terminal until asked to run `ollama run ...`, at that point instead run `ollama run llama3.1:8b`. If you have a laptop with less than 16GB of RAM you might want to run `ollama run llama3.2:3b` instead, and if that gives you issues, then try `ollama run llama3.2:1b`.
-4. Once that is running, you should be able to chat with the AI model in your terminal, and it should be fairly responsive! After that all works though, say bye by running `/bye` in the chat.
-5. Now that works, we are going to install OpenWebUI, to do that, all you need to do is make sure you're at the root of this repo and run `docker compose -f ./docker-compose-native-ollama.yaml up`
-6. That should download some stuff and spin everything up for you, once that's done and you see it say something like, `openwebui is running at 127.0.0.1:8080`, cmd + click on that or go to localhost:8080 in your browser and you should be good to go!
-
+I have included a couple of scripts to help reinstall the drivers if needed. These are scripts that worked for me on my machine (Ubuntu 22.04 with an NVIDIA GeForce RTX 3050 Laptop GPU). They are offered for insight only and may not work for you. They may even be harmful to your system. You have been warned!!

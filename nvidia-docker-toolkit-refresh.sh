@@ -1,5 +1,28 @@
 #!/bin/bash
 
+# =======================================================================================
+# NVIDIA Docker Toolkit Repository Refresh Script
+#
+# Purpose:
+#   This script re-adds the official NVIDIA Container Toolkit repository,
+#   reinstalls the toolkit, refreshes containerd/Docker configuration,
+#   and verifies CUDA container functionality.
+#
+# Actions performed:
+#   - Adds the NVIDIA Container Toolkit apt repository and GPG key
+#   - Updates package lists and reinstalls `nvidia-container-toolkit`
+#   - Configures containerd with `nvidia` as the default runtime
+#   - Restarts containerd and Docker services
+#   - Runs a CUDA container test (`nvidia-smi`)
+#   - If the test fails, instructs the user to reboot to finalise driver links
+#
+# This script is intended as a lighter follow-up to `nvidia-docker-repair.sh`.
+# Use it when:
+#   - The repair script has run successfully but CUDA containers still fail
+#   - Repository or package issues are suspected
+#
+# =======================================================================================
+
 echo "--- NVIDIA Repository Fix and Final Installation ---"
 echo "This script re-adds the NVIDIA Container Toolkit repository and performs the installation."
 echo ""
